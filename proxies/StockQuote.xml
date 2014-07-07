@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="StockQuote"
+       transports="https,http"
+       statistics="disable"
+       trace="disable"
+       startOnLoad="true">
+    <target>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <endpoint>
+            <wsdl service="StockQuote"
+                  port="StockQuoteSoap"
+                  uri="http://www.webservicex.net/stockquote.asmx?WSDL"/>
+        </endpoint>
+    </target>
+    <publishWSDL uri="http://www.webservicex.net/stockquote.asmx?WSDL"/>
+    <description/>
+</proxy>
